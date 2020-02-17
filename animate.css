@@ -4,6 +4,25 @@
     padding:0;
 }
 
+input[type=toggle] {
+   position: relative;
+   top: -9999px;
+   left: -9999px;
+}
+
+label { 
+  cursor: pointer;
+  user-select: none;
+}
+
+label {
+    display:inline-block;
+    background:#ccc;
+    margin:0 0 .5em 0;
+    padding:1em 2em;
+}
+
+
 h1{
     border: 3px solid blue;
     background-color:azure;
@@ -34,16 +53,19 @@ h1{
     background-image: url(lot.jpg);
     background-size:cover;
     background-position: center;
-    position:relative;
+    position:absolute;
     overflow-x:hidden;
+    z-index: -1;
 }
 
 
-.car
+.carr
 {
+    
     width:400px;
     position:relative;
-    animation:drive 5s infinite;
+    /*animation:drive 5s infinite;*/
+    z-index:1;
 }
 
 
@@ -57,22 +79,46 @@ h1{
     
     /*moves right*/
     25% {
-        transform: translateX(800px);
+        transform: translate(800px,60px);
     }
     
     /*reverses at angle into parking spot*/
     55% {
-        transform: rotate(-45deg) translate(175px,500px);
+        transform: rotate(-45deg) translate(240px,40px);
 
     }
     
     /*straightens car*/
     100% {
-        transform: rotate(0deg) translate(100%,165%);
+        transform: rotate(0deg) translate(30%,135%);
     
     }
     
    
 }
 
+/* checked */
+input[type=checkbox].start:checked ~ .car {
+    /*animation:drive 15s steps(5,end) infinite;*/
+   transform: translate(800px,60px);
+
+}
+
+input[type=checkbox].step2:checked ~ .car{
+
+   /* transform: translate(800px,60px);*/
+    transform: rotate(-45deg) translate(240px,40px);
+}
+
+input[type=checkbox].step3:checked ~ .car{
+
+   /* transform: translate(800px,60px);*/
+    transform: rotate(0deg) translate(30%,135%);
+}
+
+input[type=checkbox].finish:checked ~ .car{
+
+   /* transform: translate(800px,60px);*/
+    animation:drive 10s steps(4,end) infinite;
+}
 

@@ -4,6 +4,7 @@
     padding:0;
 }
 
+/* buttons to park step by step */
 input[type=toggle] {
    position: relative;
    top: -9999px;
@@ -32,6 +33,7 @@ h1{
     
 }
 
+/*shows where to park*/
 .park{
     width:450px;
     /*height:200px;*/
@@ -46,8 +48,7 @@ h1{
     color: aqua;
 }
 
-.parkinglot
-{
+.parkinglot{
     height: 100vh;
     width:100%;
     background-image: url(lot.jpg);
@@ -59,9 +60,7 @@ h1{
 }
 
 
-.carr
-{
-    
+.carr{
     width:400px;
     position:relative;
     /*animation:drive 5s infinite;*/
@@ -97,7 +96,7 @@ h1{
    
 }
 
-/* checked */
+/* when buttons are pressed, car performs step to parallel park */
 input[type=checkbox].start:checked ~ .car {
     /*animation:drive 15s steps(5,end) infinite;*/
    transform: translate(800px,60px);
@@ -116,6 +115,7 @@ input[type=checkbox].step3:checked ~ .car{
     transform: rotate(0deg) translate(30%,135%);
 }
 
+/*this shows the full animation of parallel park*/
 input[type=checkbox].finish:checked ~ .car{
 
    /* transform: translate(800px,60px);*/
